@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Ayaan | Creative Developer</title>
+    
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#050505',
+              neon: '#CCFF00',
+              glass: 'rgba(255, 255, 255, 0.05)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Clash Display', 'sans-serif'],
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #ffffff;
+        overflow-x: hidden;
+        cursor: none;
+      }
+      ::selection {
+        background-color: #CCFF00;
+        color: #000;
+      }
+      .blend-difference {
+        mix-blend-mode: difference;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "three": "https://esm.sh/three@0.160.0",
+    "three/": "https://esm.sh/three@0.160.0/",
+    "three-stdlib": "https://esm.sh/three-stdlib@2.29.0?deps=three@0.160.0,react@18.2.0,react-dom@18.2.0",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@8.15.16?deps=three@0.160.0,react@18.2.0,react-dom@18.2.0",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@9.99.0?deps=three@0.160.0,react@18.2.0,react-dom@18.2.0",
+    "@react-three/cannon": "https://esm.sh/@react-three/cannon@6.6.0?deps=three@0.160.0,react@18.2.0,react-dom@18.2.0",
+    "framer-motion": "https://esm.sh/framer-motion@10.16.4?deps=react@18.2.0,react-dom@18.2.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.292.0?deps=react@18.2.0",
+    "gsap": "https://esm.sh/gsap@3.12.5",
+    "gsap/": "https://esm.sh/gsap@3.12.5/",
+    "zustand": "https://esm.sh/zustand@4.5.0?deps=react@18.2.0",
+    "@studio-freight/react-lenis": "https://esm.sh/@studio-freight/react-lenis@0.0.47?deps=react@18.2.0,react-dom@18.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
