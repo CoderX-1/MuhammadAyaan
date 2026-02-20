@@ -152,16 +152,7 @@ const Testimonials: React.FC = () => {
               <TestimonialCard key={`r1-${idx}`} review={review} />
             ))}
           </div>
-        </div>
-
-        {/* Row 2: Infinite Right (Inverse) */}
-        <div className="flex whitespace-nowrap overflow-visible cursor-grab active:cursor-grabbing">
-          <div ref={row2Ref} className="flex will-change-transform">
-            {expandedReviews.map((review, idx) => (
-              <TestimonialCard key={`r2-${idx}`} review={review} />
-            ))}
-          </div>
-        </div>
+        </div>        
       </div>
 
       {/* Large Decorative Background Text */}

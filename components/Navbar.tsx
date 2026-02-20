@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCursorStore, usePreloaderStore } from '../store';
 import { Menu, X } from 'lucide-react'; 
+import Logo from './Logo'; // <-- Logo import karna mat bhooliye ga
 
 const Navbar = () => {
   const { setCursorVariant } = useCursorStore();
@@ -16,14 +17,29 @@ const Navbar = () => {
         initial={{ y: '-100%', opacity: 0 }}
         animate={{ y: isLoading ? '-100%' : 0, opacity: isLoading ? 0 : 1 }}
         transition={{ duration: 1, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
-        className="fixed top-0 left-0 w-full z-50 px-6 py-6 md:px-12 flex justify-between items-center backdrop-blur-md bg-[#050505]/30 border-b border-white/5"
+        className="fixed top-0 left-0 w-full z-50 px-6 py-5 md:px-12 flex justify-between items-center backdrop-blur-md bg-[#050505]/30 border-b border-white/5"
       >
+        {/* ========================================= */}
+        {/* BRANDING SECTION (Logo + Text) */}
+        {/* ========================================= */}
         <div 
-          className="font-display font-bold text-xl md:text-2xl tracking-widest text-white uppercase relative z-50"
+          className="flex items-center gap-4 relative z-50 cursor-pointer"
           onMouseEnter={() => setCursorVariant('text')}
           onMouseLeave={() => setCursorVariant('default')}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          Muhammad Ayaan
+          {/* Animated SVG Logo */}
+          <Logo />
+          
+          {/* Name Text */}
+          <div className="flex flex-col hidden sm:flex">
+            <span className="font-display font-bold text-lg tracking-widest text-white uppercase leading-none">
+              Ayaan.
+            </span>
+            <span className="font-mono text-[9px] text-neon uppercase tracking-widest mt-1">
+              Creative Dev
+            </span>
+          </div>
         </div>
         
         {/* Desktop Links */}
@@ -50,7 +66,7 @@ const Navbar = () => {
         </button>
       </motion.nav>
 
-      {/* Mobile Full-Screen Menu Overlay */}
+      {/* Mobile Full-Screen Menu Overlay... (Baaki code same rahega) */}
       <AnimatePresence>
         {isOpen && (
           <motion.div 
