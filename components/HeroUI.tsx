@@ -12,7 +12,7 @@ const HeroUI: React.FC = () => {
   const opacity = useTransform(scrollY, [0, 800], [1, 0.3]); 
   const y = useTransform(scrollY, [0, 800], [0, 50]); 
 
-  const bigText = "FULLSTACK DEVELOPER";
+  const bigText = "MUHAMMAD AYAAN FULLSTACK DEVELOPER";
   const smallText = "— Welcome — Next.js — ©2026 — MERN Stack — Fullstack — Developer ";
 
   return (
