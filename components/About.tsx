@@ -1,6 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { useCursorStore } from '../store';
+import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   const { setCursorVariant } = useCursorStore();
@@ -10,12 +10,11 @@ const About: React.FC = () => {
       <div className="w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Text Reveal */}
           <motion.div 
-            initial={{ opacity: 0, y: 80 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1 }}
             className="space-y-8"
           >
             <div className="space-y-6 text-center md:text-start">
@@ -23,7 +22,8 @@ const About: React.FC = () => {
                 <div className="flex items-center justify-center md:justify-start gap-4">
                   <p className="font-mono text-neon text-sm uppercase tracking-widest">/ Who I Am</p>
                 </div>
-                <h2 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-white leading-tight tracking-tight">
+                {/* Standardized Font Size */}
+                <h2 className="text-5xl md:text-[6vw] font-display font-bold uppercase text-white leading-none tracking-tighter">
                   About Me
                 </h2>
               </div>
@@ -36,17 +36,17 @@ const About: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Terminal Reveal (Slightly delayed) */}
           <motion.div 
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, delay: 0.2 }}
             className="order-first lg:order-last"
             onMouseEnter={() => setCursorVariant('text')}
             onMouseLeave={() => setCursorVariant('default')}
           >
-            <div className="bg-[#050505]/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl hover:border-white/20 transition-colors duration-500">
+            {/* Performance: Reduced backdrop blur for mobile */}
+            <div className="bg-[#050505]/90 md:backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl">
               <div className="mb-6 flex items-center gap-2 border-b border-white/10 pb-4">
                 <div className="h-3 w-3 rounded-full bg-red-500/80"></div>
                 <div className="h-3 w-3 rounded-full bg-yellow-500/80"></div>
@@ -59,7 +59,7 @@ const About: React.FC = () => {
                   <div><span className="ml-4 md:ml-8 text-[#79c0ff]">name:</span> <span className="text-[#a5d6ff]">'Muhammad Ayaan'</span><span className="text-gray-400">,</span></div>
                   <div><span className="ml-4 md:ml-8 text-[#79c0ff]">location:</span> <span className="text-[#a5d6ff]">'Karachi, PK'</span><span className="text-gray-400">,</span></div>
                   <div><span className="ml-4 md:ml-8 text-[#79c0ff]">role:</span> <span className="text-[#a5d6ff]">'Full-Stack Creative Dev'</span><span className="text-gray-400">,</span></div>
-                  <div><span className="ml-4 md:ml-8 text-[#79c0ff]">skills:</span> <span className="text-gray-400">['</span><span className="text-[#d2a8ff]">Frontend</span><span className="text-gray-400">', '</span><span className="text-[#d2a8ff]">Backend</span><span className="text-gray-400">', '</span><span className="text-[#d2a8ff]">WebGL</span><span className="text-gray-400">'],</span></div>
+                  <div><span className="ml-4 md:ml-8 text-[#79c0ff]">skills:</span> <span className="text-gray-400">['</span><span className="text-[#d2a8ff]">Frontend</span><span className="text-gray-400">', '</span><span className="text-[#d2a8ff]">Backend</span><span className="text-gray-400">']</span></div>
                   <div><span className="ml-4 md:ml-8 text-gray-400">{'}'};</span></div>
                 </code>
               </div>

@@ -21,7 +21,7 @@ const BentoGrid: React.FC = () => {
   });
 
   return (
-    <section id="arsenal" className="py-20 px-6 md:px-12 w-full max-w-7xl mx-auto z-20">
+    <section id="expertise" className="py-20 px-6 md:px-12 w-full max-w-7xl mx-auto z-20">
       {/* 3 Columns Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-min md:auto-rows-[280px]">
         

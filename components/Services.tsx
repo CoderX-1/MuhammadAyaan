@@ -46,7 +46,7 @@ const Services: React.FC = () => {
         scrollTrigger: {
           trigger: triggerRef.current,
           start: "top top",
-          end: "2000 bottom", // Jitni height section ki hai utna chalega
+          end: "bottom bottom", // Jitni height section ki hai utna chalega
           scrub: 1,
           invalidateOnRefresh: true
         }
@@ -58,7 +58,7 @@ const Services: React.FC = () => {
 
   return (
     // FOOLPROOF STICKY TRICK: Iski height 300vh hai (3 sections ke liye)
-    <section ref={triggerRef} className="relative h-[300vh] w-full z-20 border-t border-white/5 bg-transparent">
+    <section id="services" ref={triggerRef} className="relative h-[300vh] w-full z-20 border-t border-white/5 bg-transparent">
       
       {/* Yeh div screen par chipka rahega (sticky) */}
       <div className="sticky top-0 h-screen w-full overflow-hidden">

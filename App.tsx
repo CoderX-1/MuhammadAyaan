@@ -15,64 +15,57 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    // Lenis Smooth Scroll Setup
     <ReactLenis root options={{ lerp: 0.05, smoothWheel: true }}>
-      
-      {/* Global Overlays */}
       <Preloader />
       <CustomCursor />
       <Navbar />
       
-      {/* Main Content Wrapper */}
-      <main className="relative z-10 w-full flex flex-col bg-[#020202] text-white selection:bg-neon selection:text-black">
+      <main className="relative w-full text-white selection:bg-neon selection:text-black bg-transparent">
         
-        {/* 1. THE HOOK */}
+        {/* 1. HERO LAYER (Khud Fixed hai aur zoom down hoga) */}
         <HeroUI />
 
-        {/* Backdrop for the rest of the site */}
-        <div className="relative z-20 flex flex-col w-full bg-[#020202]/90 backdrop-blur-2xl shadow-[0_-50px_100px_rgba(2,2,2,1)]">
+        {/* 2. MAIN CONTENT LAYER (Hero ke upar overlap hoga) */}
+        <div className="relative z-10 flex flex-col w-full mt-[100vh] bg-[#050505] rounded-t-[40px] md:rounded-t-[80px] shadow-[0_-30px_80px_rgba(204,255,0,0.03)] border-t border-white/10 pb-20">
             
-            {/* 2. THE IDENTITY (Who am I) */}
-            <div className="border-t border-white/5 pt-10">
+            <div className="pt-24 pb-10">
               <About />
             </div>
 
-            {/* 3. THE PROOF (My Work) - Placed high to grab client attention immediately */}
-            <div className="w-full bg-[#050505] border-y border-white/5 py-10 mt-10">
-              <Projects /> 
-            </div>
-            
-            {/* 4. THE VALUE (What I offer) - Bento Grid followed by Services */}
-            <div className="w-full flex flex-col gap-10 py-20">
+            <div className="w-full flex flex-col gap-10 py-10 bg-[#050505]">
                <div className="max-w-7xl mx-auto px-6 md:px-12 w-full text-center mb-[-40px]">
                  <p className="font-mono text-neon text-sm uppercase tracking-widest mb-4">/ Expertise</p>
-                 <h2 className="font-display font-bold text-4xl md:text-6xl text-white">Value I Bring</h2>
+                 {/* Standardized Font Size */}
+                 <h2 className="text-5xl md:text-[6vw] font-display font-bold leading-none uppercase text-white tracking-tighter">Value I Bring</h2>
                </div>
                <BentoGrid />
+               
+               {/* Fixed Services Section */}
                <Services /> 
             </div>
 
-            {/* 5. THE ARSENAL (Tools) - Placed after value to show HOW I do it */}
-            <div className="bg-[#050505] border-y border-white/5">
+            <div className="w-full bg-[#020202] border-y border-white/5 py-20 mt-10">
+              <Projects /> 
+            </div>
+
+            <div className="bg-[#050505] py-10">
               <TechStack />
             </div>
             
-            {/* 6. THE TRUST (Reviews) */}
-            <div className="py-20 w-full">
+            <div className="py-20 w-full bg-[#020202] border-y border-white/5">
               <Testimonials />
             </div>
 
-            {/* 7. THE CTA (Let's connect) */}
-            <div className="border-t border-white/5">
+            <div className="border-t border-white/5 bg-[#050505] pt-10 pb-10">
               <Contact />
             </div>
 
         </div>
+        
+        {/* 3. FOOTER LAYER */}
+        <Footer />
+
       </main>
-      
-      {/* Footer reveals from the bottom */}
-      <Footer />
-      
     </ReactLenis>
   );
 }

@@ -24,7 +24,6 @@ const SectionReveal = ({ children }: { children: React.ReactNode }) => {
       style={{ opacity, y, scale, filter }}
       className="w-full will-change-transform will-change-opacity"
     >
-      {children}
     </motion.div>
   );
 };
