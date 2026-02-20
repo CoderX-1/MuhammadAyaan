@@ -1,54 +1,72 @@
-import React, { useRef, useLayoutEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { useCursorStore } from '../store';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const About: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLParagraphElement>(null);
   const { setCursorVariant } = useCursorStore();
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const words = textRef.current?.innerText.split(' ');
-      if (textRef.current) {
-        textRef.current.innerHTML = words!.map(word => `<span class="inline-block opacity-10 mr-2 word-reveal">${word}</span>`).join('');
-      }
-
-      gsap.to('.word-reveal', {
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 60%',
-          end: 'bottom 80%',
-          scrub: 1,
-        },
-        opacity: 1,
-        stagger: 0.1,
-        color: '#ffffff',
-        duration: 1
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section 
-      ref={containerRef} 
-      className="relative min-h-screen py-32 px-6 md:px-20 flex items-center justify-center bg-dark"
-      onMouseEnter={() => setCursorVariant('text')}
-      onMouseLeave={() => setCursorVariant('default')}
-    >
-      <div className="max-w-6xl w-full">
-        <p className="text-sm font-mono text-neon mb-8 tracking-widest uppercase">/ Philosophy</p>
-        <p 
-          ref={textRef} 
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] md:leading-[1.1] text-gray-400"
-        >
-          I bridge the gap between complex logic and fluid design. Crafting immersive web experiences that feel alive, responsive, and technically superior. Web development is not just code; it is digital architecture for the future.
-        </p>
+    <section id="evolution" className="relative min-h-[80vh] py-24 px-6 md:px-12 w-full max-w-7xl mx-auto z-20 flex items-center overflow-hidden">
+      <div className="w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Text Reveal */}
+          <motion.div 
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="space-y-8"
+          >
+            <div className="space-y-6 text-center md:text-start">
+              <div className="space-y-3">
+                <div className="flex items-center justify-center md:justify-start gap-4">
+                  <p className="font-mono text-neon text-sm uppercase tracking-widest">/ Who I Am</p>
+                </div>
+                <h2 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-white leading-tight tracking-tight">
+                  About Me
+                </h2>
+              </div>
+              <p className="max-w-xl text-lg text-gray-400 leading-relaxed font-medium">
+                I bridge the gap between complex logic and fluid design. Crafting immersive web experiences that feel alive, responsive, and technically superior.
+              </p>
+              <p className="max-w-xl text-base text-gray-500 leading-relaxed">
+                As a passionate Full-Stack Creative Developer based in Karachi, PK, I specialize in turning complex challenges into elegant, high-performance solutions that deliver real value.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Terminal Reveal (Slightly delayed) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="order-first lg:order-last"
+            onMouseEnter={() => setCursorVariant('text')}
+            onMouseLeave={() => setCursorVariant('default')}
+          >
+            <div className="bg-[#050505]/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl hover:border-white/20 transition-colors duration-500">
+              <div className="mb-6 flex items-center gap-2 border-b border-white/10 pb-4">
+                <div className="h-3 w-3 rounded-full bg-red-500/80"></div>
+                <div className="h-3 w-3 rounded-full bg-yellow-500/80"></div>
+                <div className="h-3 w-3 rounded-full bg-green-500/80"></div>
+                <span className="ml-4 text-xs font-mono text-gray-500 tracking-wider">ayaan.ts</span>
+              </div>
+              <div className="space-y-2 overflow-x-auto">
+                <code className="font-mono text-sm md:text-base leading-relaxed whitespace-pre block">
+                  <div><span className="text-[#ff7b72] italic">const</span> <span className="text-white font-bold">developer</span> <span className="text-[#ff7b72]">=</span> <span className="text-gray-400">{'{'}</span></div>
+                  <div><span className="ml-4 md:ml-8 text-[#79c0ff]">name:</span> <span className="text-[#a5d6ff]">'Muhammad Ayaan'</span><span className="text-gray-400">,</span></div>
+                  <div><span className="ml-4 md:ml-8 text-[#79c0ff]">location:</span> <span className="text-[#a5d6ff]">'Karachi, PK'</span><span className="text-gray-400">,</span></div>
+                  <div><span className="ml-4 md:ml-8 text-[#79c0ff]">role:</span> <span className="text-[#a5d6ff]">'Full-Stack Creative Dev'</span><span className="text-gray-400">,</span></div>
+                  <div><span className="ml-4 md:ml-8 text-[#79c0ff]">skills:</span> <span className="text-gray-400">['</span><span className="text-[#d2a8ff]">Frontend</span><span className="text-gray-400">', '</span><span className="text-[#d2a8ff]">Backend</span><span className="text-gray-400">', '</span><span className="text-[#d2a8ff]">WebGL</span><span className="text-gray-400">'],</span></div>
+                  <div><span className="ml-4 md:ml-8 text-gray-400">{'}'};</span></div>
+                </code>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

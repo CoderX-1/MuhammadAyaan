@@ -1,45 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, ArrowUpRight, Code2, Cpu, Layout, Palette } from 'lucide-react';
 import { useCursorStore } from '../store';
-
-// --- CUSTOM SPOTLIGHT CARD COMPONENT ---
-// Yeh component mouse ki X aur Y position track karega aur radial gradient generate karega
-const SpotlightCard = ({ children, className = "", ...props }: any) => {
-  const divRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!divRef.current) return;
-    const rect = divRef.current.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-
-  return (
-    <motion.div
-      ref={divRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setOpacity(1)}
-      onMouseLeave={() => setOpacity(0)}
-      className={`relative overflow-hidden bg-[#050505]/60 backdrop-blur-md border border-white/5 rounded-3xl group transition-colors duration-500 hover:border-white/10 ${className}`}
-      {...props}
-    >
-      {/* Spotlight Gradient Layer */}
-      <div
-        className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-500 ease-in-out"
-        style={{
-          opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(204,255,0,0.06), transparent 40%)`,
-        }}
-      />
-      {/* Content Layer */}
-      <div className="relative z-10 h-full w-full p-8 flex flex-col justify-between">
-        {children}
-      </div>
-    </motion.div>
-  );
-};
 
 const BentoGrid: React.FC = () => {
   const { setCursorVariant } = useCursorStore();
@@ -58,24 +20,15 @@ const BentoGrid: React.FC = () => {
     minute: '2-digit'
   });
 
-  // Spring Animation Variants for smooth entrance
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      scale: 1,
-      transition: { type: "spring", stiffness: 100, damping: 20 }
-    }
-  };
-
   return (
     <section id="arsenal" className="py-20 px-6 md:px-12 w-full max-w-7xl mx-auto z-20">
+      {/* 3 Columns Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-min md:auto-rows-[280px]">
         
-        {/* CARD 1: Profile & Time */}
-        <SpotlightCard 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={cardVariants}
+        {/* CARD 1: Profile & Time (Col 1) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="bg-[#050505]/60 backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col justify-between group hover:border-white/10 transition-colors"
         >
           <div>
             <h3 className="font-display text-3xl font-bold text-white mb-2">Muhammad<br/><span className="text-gray-500 italic font-serif">Ayaan</span></h3>
@@ -84,16 +37,16 @@ const BentoGrid: React.FC = () => {
             </p>
           </div>
           <div className="flex gap-2 opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 mt-8 md:mt-0">
-             <div className="w-16 h-20 bg-white/5 rounded-lg transform -rotate-6 border border-white/5"></div>
-             <div className="w-16 h-24 bg-white/10 rounded-lg -translate-y-4 border border-white/10"></div>
-             <div className="w-16 h-20 bg-white/5 rounded-lg transform rotate-6 border border-white/5"></div>
+             <div className="w-16 h-20 bg-white/10 rounded-lg transform -rotate-6 border border-white/5"></div>
+             <div className="w-16 h-24 bg-white/20 rounded-lg -translate-y-4 border border-white/10"></div>
+             <div className="w-16 h-20 bg-white/10 rounded-lg transform rotate-6 border border-white/5"></div>
           </div>
-        </SpotlightCard>
+        </motion.div>
 
-        {/* CARD 2: Philosophy */}
-        <SpotlightCard 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.1 }} variants={cardVariants}
-          className="md:col-span-2"
+        {/* CARD 2: Philosophy (Col 2 & 3) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+          className="md:col-span-2 bg-[#050505]/60 backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col justify-between hover:border-white/10 transition-colors relative overflow-hidden"
         >
           <div className="flex justify-between items-start mb-6 md:mb-0">
             <p className="text-xs font-mono text-gray-500 tracking-widest uppercase">/ Detail-Driven UI</p>
@@ -102,7 +55,7 @@ const BentoGrid: React.FC = () => {
               <span className="px-3 py-1 rounded-full border border-white/10 text-xs text-gray-400 bg-white/5">WebGL</span>
             </div>
           </div>
-          <div>
+          <div className="z-10">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
               Interfaces <br/><span className="text-gray-500 italic font-serif font-medium">you can feel.</span>
             </h2>
@@ -110,12 +63,12 @@ const BentoGrid: React.FC = () => {
               I sweat the spacing, timing, and physics — bridging the gap between raw data and fluid motion. Every interaction is calculated.
             </p>
           </div>
-        </SpotlightCard>
+        </motion.div>
 
-        {/* CARD 3: Technological Arsenal */}
-        <SpotlightCard 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }} variants={cardVariants}
-          className="md:col-span-2"
+        {/* CARD 3: COMBINED TECHNOLOGICAL ARSENAL (Col 1 & 2) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+          className="md:col-span-2 bg-[#050505]/60 backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col justify-between hover:border-white/10 transition-colors"
         >
           <div className="mb-6">
              <p className="text-xs font-mono text-neon tracking-widest uppercase mb-1">/ Expertise</p>
@@ -123,6 +76,7 @@ const BentoGrid: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-auto">
+            {/* Frontend */}
             <div className="flex items-start gap-4">
                <div className="p-2 bg-white/5 rounded-lg text-gray-300"><Layout size={20} /></div>
                <div>
@@ -130,6 +84,7 @@ const BentoGrid: React.FC = () => {
                  <p className="text-gray-500 text-xs mt-1">Scalable React & Next.js systems</p>
                </div>
             </div>
+            {/* Creative Coding */}
             <div className="flex items-start gap-4">
                <div className="p-2 bg-white/5 rounded-lg text-gray-300"><Code2 size={20} /></div>
                <div>
@@ -137,6 +92,7 @@ const BentoGrid: React.FC = () => {
                  <p className="text-gray-500 text-xs mt-1">WebGL, Three.js & GLSL Shaders</p>
                </div>
             </div>
+            {/* Motion */}
             <div className="flex items-start gap-4">
                <div className="p-2 bg-white/5 rounded-lg text-gray-300"><Cpu size={20} /></div>
                <div>
@@ -144,6 +100,7 @@ const BentoGrid: React.FC = () => {
                  <p className="text-gray-500 text-xs mt-1">Fluid GSAP & Framer animations</p>
                </div>
             </div>
+            {/* UI/UX */}
             <div className="flex items-start gap-4">
                <div className="p-2 bg-white/5 rounded-lg text-gray-300"><Palette size={20} /></div>
                <div>
@@ -152,11 +109,12 @@ const BentoGrid: React.FC = () => {
                </div>
             </div>
           </div>
-        </SpotlightCard>
+        </motion.div>
 
-        {/* CARD 4: Available Globally */}
-        <SpotlightCard 
-          initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.3 }} variants={cardVariants}
+        {/* CARD 4: Globe / Available Globally (Col 3) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
+          className="bg-[#050505]/60 backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col relative overflow-hidden group hover:border-white/10 transition-colors"
         >
           <div className="z-10">
             <p className="text-xs font-mono text-gray-500 tracking-widest uppercase mb-2">Available Globally</p>
@@ -166,19 +124,20 @@ const BentoGrid: React.FC = () => {
              <MapPin size={16} className="text-neon" />
              <span className="text-sm font-bold text-white">Remote / PK</span>
           </div>
-          <div className="absolute -bottom-16 -right-16 w-64 h-64 border border-white/5 rounded-full flex items-center justify-center pointer-events-none group-hover:border-neon/20 transition-colors duration-700">
+          {/* Abstract Globe/Radar in background */}
+          <div className="absolute -bottom-16 -right-16 w-64 h-64 border border-white/5 rounded-full flex items-center justify-center group-hover:border-neon/20 transition-colors duration-700 pointer-events-none">
              <div className="w-40 h-40 border border-white/5 rounded-full flex items-center justify-center">
                 <div className="w-2 h-2 bg-neon rounded-full animate-ping"></div>
              </div>
           </div>
-        </SpotlightCard>
+        </motion.div>
 
       </div>
 
-      {/* CARD 5: Bottom CTA */}
-      <SpotlightCard 
-        initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.4 }} variants={cardVariants}
-        className="mt-4 md:mt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8"
+      {/* CARD 5: Bottom CTA (Full Width) */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
+        className="mt-4 md:mt-6 bg-[#050505]/60 backdrop-blur-md border border-white/5 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row justify-between items-start md:items-center hover:border-white/10 transition-colors gap-8"
         onMouseEnter={() => setCursorVariant('button')}
         onMouseLeave={() => setCursorVariant('default')}
       >
@@ -202,7 +161,7 @@ const BentoGrid: React.FC = () => {
         >
           CONNECT NOW <ArrowUpRight size={18} />
         </button>
-      </SpotlightCard>
+      </motion.div>
     </section>
   );
 };
