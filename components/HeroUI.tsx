@@ -19,7 +19,7 @@ const HeroUI: React.FC = () => {
     // Fixed wrapper jo hamesha peeche rahega aur shrink hoga
     <motion.div
       style={{ scale, opacity, y }}
-      className="fixed top-0 left-0 w-full h-screen z-0 origin-center bg-[#020202]"
+      className="fixed top-0 left-0 w-full h-screen z-0 origin-bottom bg-[#020202]"
     >
       <section className="relative w-full h-full overflow-hidden flex items-center justify-center pt-10">
         
@@ -28,7 +28,7 @@ const HeroUI: React.FC = () => {
           initial={{ scale: 0.8, opacity: 0, filter: 'blur(10px)' }}
           animate={{ scale: isLoading ? 0.8 : 1, opacity: isLoading ? 0 : 1, filter: isLoading ? 'blur(10px)' : 'blur(0px)' }}
           transition={{ duration: 1.5, delay: 0.5, ease: [0.76, 0, 0.24, 1] }}
-          className="relative w-[75vw] md:w-[400px] lg:w-[450px] h-[55vh] md:h-[650px] z-10 group"
+          className="relative w-[75vw] md:w-[400px] lg:w-[400px] h-[55vh] md:h-[530px] z-10 group"
           onMouseEnter={() => setCursorVariant('project')}
           onMouseLeave={() => setCursorVariant('default')}
         >
@@ -87,7 +87,7 @@ const HeroUI: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-0 md:bottom-8 w-full z-20 pointer-events-none flex overflow-hidden whitespace-nowrap border-y border-white/5 bg-[#050505]/50 backdrop-blur-sm py-3 md:py-4"
+          className="absolute bottom-0 md:bottom-24 w-full z-20 pointer-events-none flex overflow-hidden whitespace-nowrap border-y border-white/5 bg-[#050505]/50 backdrop-blur-sm py-3 md:py-4"
         >
           <motion.div
             animate={{ x: ["-50%", "0%"] }}

@@ -77,12 +77,12 @@ const Services: React.FC = () => {
                 0{index + 1}
               </div>
 
-              <div className="z-10 w-full md:w-1/2 flex flex-col justify-center space-y-6 md:pr-10">
+              <div className="z-10 w-full flex flex-col justify-center space-y-6 md:pr-10">
                 <span className="text-neon font-mono tracking-widest text-sm uppercase">{service.category}</span>
                 <h2 className="text-5xl md:text-7xl font-display font-bold uppercase text-white leading-tight">
                   {service.title}
                 </h2>
-                <p className="text-lg md:text-xl text-gray-400 max-w-md leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
                   {service.description}
                 </p>
                 <div className="flex flex-wrap gap-2 pt-4">
@@ -94,10 +94,7 @@ const Services: React.FC = () => {
                 </div>
               </div>
 
-              <div className="z-10 w-full md:w-1/3 mt-12 md:mt-0 aspect-video md:aspect-square lg:aspect-video rounded-xl overflow-hidden relative group shadow-2xl border border-white/10">
-                <div className="absolute inset-0 bg-neon/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0" />
-              </div>
+                
             </div>
           ))}
         </div>
