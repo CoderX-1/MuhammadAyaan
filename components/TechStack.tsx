@@ -49,7 +49,7 @@ const TechStack: React.FC = () => {
       onMouseLeave={() => setCursorVariant('default')}
     >
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-12">
-        <div className="mb-20 space-y-6">
+        <div className="mb-20 space-y-6 text-center">
           <div className="space-y-3">
              <p className="font-mono text-neon text-xs md:text-sm uppercase tracking-[0.15em]">/ Skills & Expertise</p>
              {/* Standardized Font Size */}

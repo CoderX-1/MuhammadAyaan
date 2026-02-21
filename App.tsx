@@ -33,7 +33,7 @@ function App() {
             </div>
 
             <div className="w-full flex flex-col gap-10 py-10 bg-[#050505]">
-               <div className="max-w-7xl mx-auto px-6 md:px-12 w-full mb-[-40px]">
+               <div className="max-w-7xl mx-auto px-6 md:px-12 text-center w-full mb-[-40px]">
                  <p className="font-mono text-neon text-sm uppercase tracking-widest mb-4">/ Expertise</p>
                  <h2 className="text-5xl md:text-[6vw] font-display font-bold leading-none uppercase text-white tracking-tighter">Value I Bring</h2>
                </div>
