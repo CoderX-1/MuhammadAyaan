@@ -41,7 +41,7 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="order-first lg:order-last"
+            className="order-last"
             onMouseEnter={() => setCursorVariant('text')}
             onMouseLeave={() => setCursorVariant('default')}
           >
