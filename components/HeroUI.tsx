@@ -31,7 +31,7 @@ const HeroUI: React.FC = () => {
           onMouseLeave={() => setCursorVariant('default')}
         >
           <img 
-            src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?q=80&w=2070&auto=format&fit=crop" 
+            src="/profile.jpg" 
             alt="Muhammad Ayaan" 
             className="w-full h-full object-cover rounded-2xl opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
           />
@@ -52,7 +52,7 @@ const HeroUI: React.FC = () => {
         {/* CSS FIX: Mobile par 'mix-blend-normal' hai aur desktop par 'md:mix-blend-difference' hai taaki lag na ho */}
         <div className="absolute top-[60%] -translate-y-1/2 w-full z-20 pointer-events-none flex overflow-hidden whitespace-nowrap mix-blend-normal md:mix-blend-difference">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: isLoading ? 0 : 1 }} transition={{ duration: 1, delay: 1 }}>
-            <motion.div clasna animate={{ x: ["0%", "-50%"] }} transition={{ ease: "linear", duration: 60, repeat: Infinity }} className="flex font-display font-bold text-[26vw] md:text-[20vw] leading-none tracking-tighter uppercase text-white">
+            <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ ease: "linear", duration: 120, repeat: Infinity }} className="flex font-display font-bold text-[26vw] md:text-[14vw] leading-none tracking-wide uppercase text-white">
               <span className="pr-[10vw]">{bigText}</span>
               <span className="pr-[10vw]">{bigText}</span>
               <span className="pr-[10vw]">{bigText}</span>
@@ -65,7 +65,7 @@ const HeroUI: React.FC = () => {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: isLoading ? 0 : 1, y: isLoading ? 20 : 0 }} transition={{ duration: 1, delay: 1.5 }}
           className="absolute bottom-[150px] md:bottom-[100px] xxl:bottom-[80px] w-full z-20 pointer-events-none flex overflow-hidden whitespace-nowrap border-y border-white/5 bg-[#050505]/50 backdrop-blur-sm py-3 md:py-4"
         >
-          <motion.div animate={{ x: ["-50%", "0%"] }} transition={{ ease: "linear", duration: 40, repeat: Infinity }} className="flex font-mono text-xs md:text-sm font-medium text-gray-400 uppercase tracking-widest">
+          <motion.div animate={{ x: ["-50%", "0%"] }} transition={{ ease: "linear", duration: 40, repeat: Infinity }} className="flex font-mono text-sm md:text-base font-medium text-gray-400 uppercase tracking-widest">
             <span className="pr-10 hover:text-neon transition-colors">{smallText}</span>
             <span className="pr-10 hover:text-neon transition-colors">{smallText}</span>
             <span className="pr-10 hover:text-neon transition-colors">{smallText}</span>
