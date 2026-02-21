@@ -49,7 +49,7 @@ const TechStack: React.FC = () => {
       onMouseLeave={() => setCursorVariant('default')}
     >
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-12">
-        <div className="mb-20 space-y-6 text-center">
+        <div className="mb-20 space-y-6">
           <div className="space-y-3">
              <p className="font-mono text-neon text-xs md:text-sm uppercase tracking-[0.15em]">/ Skills & Expertise</p>
              {/* Standardized Font Size */}
@@ -60,7 +60,7 @@ const TechStack: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative flex flex-col gap-6 py-10 w-full mt-10">
+      <div className="relative flex flex-col gap-6 py-10 max-w-7xl mx-auto mt-10">
         <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-r from-[#020202] via-transparent to-[#020202] w-full" />
         <MarqueeRow items={row1} direction={1} speed={45} />
         <MarqueeRow items={row2} direction={-1} speed={55} />

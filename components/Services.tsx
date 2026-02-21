@@ -64,7 +64,7 @@ const Services: React.FC = () => {
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         
         {/* Yeh track horizontally slide hoga */}
-        <div ref={containerRef} className="flex h-full w-[300vw]">
+        <div ref={containerRef} className="flex h-full">
           {services.map((service, index) => (
             <div 
               key={service.id} 
