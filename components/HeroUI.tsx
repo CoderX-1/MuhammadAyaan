@@ -11,7 +11,7 @@ const HeroUI: React.FC = () => {
   const opacity = useTransform(scrollY, [0, 800], [1, 0.3]); 
   const y = useTransform(scrollY, [0, 800], [0, 50]); 
 
-  const bigText = "MUHAMMAD AYAAN FULLSTACK DEVELOPER";
+  const bigText = "MUHAMMAD AYAAN  —  FULLSTACK — DEVELOPER";
   const smallText = "— Welcome — Next.js — ©2026 — MERN Stack — Fullstack — Developer ";
 
   return (
@@ -53,10 +53,10 @@ const HeroUI: React.FC = () => {
         <div className="absolute top-[60%] -translate-y-1/2 w-full z-20 pointer-events-none flex overflow-hidden whitespace-nowrap mix-blend-normal md:mix-blend-difference">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: isLoading ? 0 : 1 }} transition={{ duration: 1, delay: 1 }}>
             <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ ease: "linear", duration: 120, repeat: Infinity }} className="flex font-display font-bold text-[26vw] md:text-[14vw] leading-none tracking-wide uppercase text-white">
-              <span className="pr-[10vw]">{bigText}</span>
-              <span className="pr-[10vw]">{bigText}</span>
-              <span className="pr-[10vw]">{bigText}</span>
-              <span className="pr-[10vw]">{bigText}</span>
+              <span className="pr-10">{bigText}</span>
+              <span className="pr-10">{bigText}</span>
+              <span className="pr-10">{bigText}</span>
+              <span className="pr-10">{bigText}</span>
             </motion.div>
           </motion.div>
         </div>
