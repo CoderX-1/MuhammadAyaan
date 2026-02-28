@@ -37,7 +37,7 @@ function App() {
             <div className="w-full flex flex-col gap-10 py-10 bg-transparent">
                <div className="max-w-7xl mx-auto px-6 md:px-12 w-full text-center mb-[-40px]">
                  <p className="font-mono text-neon text-sm uppercase tracking-widest mb-4">/ Expertise</p>
-                 <h2 className="text-5xl md:text-[6vw] font-display font-bold leading-none uppercase text-white tracking-tighter">Value I Bring</h2>
+                 <h2 className="text-[2.5rem] md:text-[6vw] font-display font-bold leading-none uppercase text-white tracking-tighter">Value I Bring</h2>
                </div>
                <BentoGrid />
                <Services /> 

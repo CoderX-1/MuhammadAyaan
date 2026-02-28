@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
               onMouseLeave={() => setCursorVariant('default')}
             >
               <p className="text-xs md:text-sm font-mono text-gray-500 mb-4 md:mb-6 uppercase tracking-widest transition-colors group-hover:text-white">HAVE AN IDEA?</p>
-              <h2 className="text-[12vw] md:text-[8vw] font-display font-bold leading-none tracking-tighter text-white group-hover:text-neon transition-colors duration-500 uppercase">
+              <h2 className="text-[2.5rem] md:text-[8vw] font-display font-bold leading-none tracking-tighter text-white group-hover:text-neon transition-colors duration-500 uppercase">
                 START A PROJECT
               </h2>
             </div>

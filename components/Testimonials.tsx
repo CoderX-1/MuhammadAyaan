@@ -30,12 +30,12 @@ const TestimonialCard: React.FC<{ review: typeof REVIEWS[0] }> = ({ review }) =>
           <path d="M0 30V13.8462L6.15385 0H15.3846L10.7692 13.8462H15.3846V30H0ZM24.6154 30V13.8462L30.7692 0H40L35.3846 13.8462H40V30H24.6154Z" />
         </svg>
       </div>
-      <p className="text-xl md:text-2xl font-medium tracking-tight leading-relaxed whitespace-normal text-gray-300 group-hover:text-white transition-colors duration-500">
+      <p className="text-[1rem] md:text-2xl font-medium tracking-tight leading-relaxed whitespace-normal text-gray-300 group-hover:text-white transition-colors duration-500">
         "{review.text}"
       </p>
       <div className="flex flex-col gap-1 border-t border-white/10 pt-6 mt-4">
-        <span className="text-lg font-bold tracking-tight text-white">{review.author}</span>
-        <span className="text-[10px] font-bold tracking-[0.3em] text-neon uppercase">{review.role}</span>
+        <span className="text-[1rem] font-bold tracking-tight text-white">{review.author}</span>
+        <span className="text-[8px] font-bold tracking-[0.3em] text-neon uppercase">{review.role}</span>
       </div>
     </div>
   );
@@ -71,7 +71,7 @@ const Testimonials: React.FC = () => {
     <section id="testimonials" ref={containerRef} className="relative py-32 md:py-48 overflow-hidden bg-transparent border-t border-white/5 z-20">
       <div className="text-center mb-24 md:mb-32 relative z-10 heading-anim">
         {/* Standardized Font Size */}
-        <h2 className="text-5xl md:text-[6vw] font-display font-bold uppercase tracking-tighter leading-none text-white">
+        <h2 className="text-[2.5rem] md:text-[6vw] font-display font-bold uppercase tracking-tighter leading-none text-white">
           KIND <span className="text-white/20 italic font-serif">WORDS</span>
         </h2>
         <div className="mt-8 flex justify-center items-center gap-4">

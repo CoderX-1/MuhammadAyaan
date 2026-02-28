@@ -23,14 +23,14 @@ const About: React.FC = () => {
                   <p className="font-mono text-neon text-sm uppercase tracking-widest">/ Who I Am</p>
                 </div>
                 {/* Standardized Font Size */}
-                <h2 className="text-5xl md:text-[6vw] font-display font-bold uppercase text-white leading-none tracking-tighter">
+                <h2 className="text-[2.5rem] md:text-[6vw] font-display font-bold uppercase text-white leading-none tracking-tighter">
                   About Me
                 </h2>
               </div>
-              <p className="max-w-xl text-lg text-gray-400 leading-relaxed font-medium">
+              <p className="max-w-xl text-base text-gray-400 leading-relaxed font-medium">
                 I bridge the gap between complex logic and fluid design. Crafting immersive web experiences that feel alive, responsive, and technically superior.
               </p>
-              <p className="max-w-xl text-base text-gray-500 leading-relaxed">
+              <p className="max-w-xl text-sm text-gray-500 leading-relaxed">
                 As a passionate Full-Stack Creative Developer based in Karachi, PK, I specialize in turning complex challenges into elegant, high-performance solutions that deliver real value.
               </p>
             </div>

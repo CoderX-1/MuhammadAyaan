@@ -15,13 +15,13 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative flex h-full w-full flex-col items-center justify-between rounded-3xl bg-[linear-gradient(0deg,_#393632,_#080807)] bg-cover border border-white/10 shadow-lg backdrop-blur-xl p-8 md:p-16"
+          className="relative flex h-full w-full flex-col items-center justify-between rounded-3xl bg-[linear-gradient(0deg,_#393632,_#080807)] bg-cover border border-white/10 shadow-lg backdrop-blur-xl p-6 md:p-16"
         >
           <h2 className="text-center text-5xl md:text-7xl font-display font-semibold uppercase text-neon mb-12">
             Let's Make It Happen
           </h2>
 
-          <section className="w-full sm:w-[36rem] mx-auto px-6 sm:px-10 xl:px-14 py-12 rounded-2xl backdrop-blur-xl bg-[#d1d1c7]/5 border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+          <section className="w-full sm:w-[36rem] mx-auto px-4 sm:px-10 xl:px-14 py-12 rounded-2xl backdrop-blur-xl bg-[#d1d1c7]/5 border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
             <h2 className="text-center text-xl md:text-2xl font-medium mb-8 text-white tracking-tight">
               Have a project in mind?
             </h2>

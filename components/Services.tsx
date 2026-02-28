@@ -79,10 +79,10 @@ const Services: React.FC = () => {
 
               <div className="z-10 w-full flex flex-col justify-center space-y-6 md:pr-10">
                 <span className="text-neon font-mono tracking-widest text-sm uppercase">{service.category}</span>
-                <h2 className="text-5xl md:text-7xl font-display font-bold uppercase text-white leading-tight">
+                <h2 className="text-[2rem] md:text-7xl font-display font-bold uppercase text-white leading-tight">
                   {service.title}
                 </h2>
-                <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
+                <p className="text-base md:text-xl text-gray-400 leading-relaxed">
                   {service.description}
                 </p>
                 <div className="flex flex-wrap gap-2 pt-4">

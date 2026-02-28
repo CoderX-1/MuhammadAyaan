@@ -62,7 +62,7 @@ const TechStack: React.FC = () => {
         >
           <div className="space-y-3">
             <p className="font-mono text-neon text-xs md:text-sm uppercase tracking-[0.15em]">/ Skills & Expertise</p>
-            <h2 className="text-5xl md:text-[6vw] font-display font-bold uppercase text-white leading-none tracking-tighter">
+            <h2 className="text-[2.5rem] md:text-[6vw] font-display font-bold uppercase text-white leading-none tracking-tighter">
               Development<br/><span className="text-white/20 italic font-serif">Arsenal</span>
             </h2>
           </div>

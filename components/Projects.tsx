@@ -34,7 +34,7 @@ const ProjectCard = ({ project, index, setCursorVariant }: any) => {
       </motion.a>
       <div className="flex justify-between items-end mt-8 pl-4 border-l-2 border-neon/50">
         <div>
-          <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-2">{project.title}</h3>
+          <h3 className="text-[1.5rem] md:text-4xl font-display font-bold text-white mb-2">{project.title}</h3>
           <p className="text-gray-500 font-mono text-xs tracking-widest uppercase">{project.category}</p>
         </div>
       </div>
@@ -64,8 +64,8 @@ const Projects: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col mb-20">
           {/* Standardized Font Size */}
-          <h1 className="text-5xl md:text-[6vw] font-display font-bold leading-none text-white uppercase tracking-tighter m-0">
-            SELECTED WORKS /
+          <h1 className="text-[2.5rem] md:text-[6vw] font-display font-bold leading-none text-white uppercase tracking-tighter m-0">
+            SELECTED WORKS 
           </h1>
         </div>
         <div className="flex flex-col md:flex-row relative items-stretch gap-10 md:gap-20">
