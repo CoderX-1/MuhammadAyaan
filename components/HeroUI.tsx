@@ -31,7 +31,7 @@ const HeroUI: React.FC = () => {
           onMouseLeave={() => setCursorVariant('default')}
         >
           <img 
-            src="profile.png" 
+            src="https://i.ibb.co/SXD8pCt0/download.png"
             alt="Muhammad Ayaan" 
             className="w-full h-full object-cover rounded-2xl opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
           />
